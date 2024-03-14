@@ -1,7 +1,7 @@
 NAME = animals
 CXX = c++
 CXXFLAGS = -std=c++98 -Wshadow -Wall -Werror -Wextra -g
-SRC = main.cpp
+SRC = Animal.cpp main.cpp
 	
 all: $(NAME)
 

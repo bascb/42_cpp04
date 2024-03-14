@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:43:32 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/13 22:48:17 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/03/14 22:54:57 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,22 @@ Animal::Animal( void )
 
 Animal::Animal( std::string newType ) : type(newType)
 {
-	std::cout << "ClapTrap constructor called to create animal of type:" << type << std::endl;
+	std::cout << "Animal constructor called to create animal of type " << type << std::endl;
+}
+
+Animal::Animal( const Animal& src) : type(src.type)
+{
+	std::cout << "Animal Copy constructor called for animal of type " << src.type << std::endl;
+}
+
+Animal&	Animal::operator=( const Animal& src)
+{
+	std::cout << "Animal Copy assignment operator called for animal of type " << src.type << std::endl;
+	if (this != &src)
+	{
+		this->type = src.type;
+	}
+	return (*this);
 }
 
 Animal::~Animal( void )
