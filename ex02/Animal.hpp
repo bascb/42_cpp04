@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:33:01 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/17 16:04:52 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/03/18 22:32:19 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal
 		Animal&	operator=( const Animal& );
 		virtual ~Animal( void );
 		std::string	getType( void ) const;
-		virtual void	makeSound( void ) const;
+		virtual void	makeSound( void ) const = 0;
 };
 
 #endif

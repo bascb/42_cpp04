@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:43:32 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/16 16:14:20 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:49:05 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string	Animal::getType( void ) const
 	return (type);
 }
 
-void	Animal::makeSound( void ) const
-{
-	std::cout << "Animal sound: silence" << std::endl;
-}
+//void	Animal::makeSound( void ) const
+//{
+//	std::cout << "Animal sound: silence" << std::endl;
+//}
