@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 22:42:19 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/25 22:32:22 by bcastelo         ###   ########.fr       */
+/*   Created: 2024/03/23 16:45:01 by bcastelo          #+#    #+#             */
+/*   Updated: 2024/03/25 22:22:47 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#include <iostream>
-#include <string>
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Ice : public AMateria
+class Character : public ICharacter
 {
+	private:
+		std::string name;
 	public:
-		Ice( void );
-		Ice( const Ice& );
-		~Ice( void );
-		AMateria* clone( void ) const;
-		void use(ICharacter& target);
+		Character( std::string );
+		Character( const Character& );
+		Character& operator=( const Character& );
+		~Character( void );
+		std::string const & getName() const;
+			
 };
 
 #endif

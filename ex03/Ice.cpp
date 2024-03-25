@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:48:12 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/21 23:25:15 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:40:36 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ AMateria* Ice::clone() const
 	AMateria* clone = new Ice(*this);
 	
 	return (clone);
+}
+
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

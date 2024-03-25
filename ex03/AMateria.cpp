@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:19:46 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/20 23:04:38 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:37:41 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,9 @@ AMateria::~AMateria( void )
 std::string const & AMateria::getType( void ) const
 {
 	return (Type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "* Name: " << target.getName() << std::endl;
 }
