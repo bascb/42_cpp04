@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:23:59 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 15:37:30 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:07:45 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	print_header(std::string header)
 	print_rigth(space);
 	print_border();
 }
-
 
 int	main(int argc, char **argv)
 {
