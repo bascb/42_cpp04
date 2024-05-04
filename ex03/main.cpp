@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:23:59 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 12:11:39 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:02:55 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 #define WIDTH 60
 
@@ -80,6 +81,7 @@ int	main(int argc, char **argv)
 			std::cout << "Options:" << std::endl;
 			std::cout << std::endl;
 			std::cout << "char - Test character class" << std::endl;
+			std::cout << "source - Test MateriaSource class" << std::endl;
 			std::cout << std::endl;
 			std::cout << "Usage example:" << std::endl;
 			std::cout << std::endl;
@@ -90,6 +92,30 @@ int	main(int argc, char **argv)
 		else if (test == "char")
 		{
 			print_header("Testing Character class and ICharacter interface");
+			Ice*	Kimi = new Ice;
+			Cure*	healthy = new Cure;
+			Character one("Simple");
+			Character three("Tasty");
+			
+			one.equip(Kimi);
+			one.equip(healthy);
+			Character two( one );
+			one.use(0, three);
+			one.use(1, three);
+			two.use(0, three);
+			two.use(1, three);
+			one.unequip(1);
+			two = one;
+			two.use(0, three);
+			two.use(1, three);
+			delete healthy;
+		}
+		else if (test == "source")
+		{
+			print_header("Testing MateriaSource class and IMateriaSource interface");
+			IMateriaSource* src = new MateriaSource();
+
+			delete src;
 		}
 	}
 	{

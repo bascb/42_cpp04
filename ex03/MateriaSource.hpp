@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 16:45:01 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 14:41:18 by bcastelo         ###   ########.fr       */
+/*   Created: 2024/05/04 14:35:53 by bcastelo          #+#    #+#             */
+/*   Updated: 2024/05/04 14:43:23 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
 #ifndef SLOTS
 #define SLOTS 4
 #endif
 
-class Character : public ICharacter
+class MateriaSource : public IMateriaSource
 {
-	private:
-		std::string name;
-		AMateria* inventory[SLOTS];
-	public:
-		Character( std::string );
-		Character( const Character& );
-		Character& operator=( const Character& );
-		~Character( void );
-		std::string const & getName() const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
+    private:
+        AMateria* inventory[SLOTS];
+    public:
+        MateriaSource( void );
+		MateriaSource( const MateriaSource& );
+		MateriaSource& operator=( const MateriaSource& );
+		~MateriaSource( void );
 };
 
 #endif
