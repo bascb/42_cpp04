@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:50:03 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/04/13 11:19:55 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/04 10:20:13 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ Character::Character( std::string Name ) : name(Name)
 
 Character::Character( const Character& src ) : name(src.name)
 {
+	for (int i = 0; i < SLOTS; i++)
+	{
+		if (src.inventory[i] != NULL)
+			inventory[i] = src.inventory[i]->clone();
+		else
+			inventory[i] = NULL;
+	}
 	std::cout << "Character copy constructor called for " << name << std::endl;
 }
 
@@ -30,12 +37,29 @@ Character& Character::operator=( const Character& src )
 	if (this != &src)
 	{
 		this->name = src.name;
+		for (int i = 0; i < SLOTS; i++)
+		{
+			if (this->inventory[i] != NULL)
+				delete this->inventory[i];
+			if (src.inventory[i] != NULL)
+				this->inventory[i] = src.inventory[i]->clone();
+			else
+				this->inventory[i] = NULL;
+		}
 	}
 	return (*this);
 }
 
 Character::~Character( void )
 {
+	for (int i = 0; i < SLOTS; i++)
+	{
+		if (inventory[i] != NULL)
+		{
+			delete inventory[i];
+			inventory[i] = NULL;
+		}
+	}
 	std::cout << "Character default Destructor called" << std::endl;
 }
 
