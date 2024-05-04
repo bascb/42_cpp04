@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:23:59 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 15:02:55 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:37:30 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,34 +114,33 @@ int	main(int argc, char **argv)
 		{
 			print_header("Testing MateriaSource class and IMateriaSource interface");
 			IMateriaSource* src = new MateriaSource();
+			src->learnMateria(new Ice());
+			src->learnMateria(new Cure());
 
+			AMateria* tmp;
+			tmp = src->createMateria("ice");
+
+			delete tmp;
 			delete src;
 		}
 	}
 	{
-		print_header("Default");
-		Ice	Kimi;
-		Cure healthy;
-		AMateria* clone = Kimi.clone();
-		AMateria* clone2 = healthy.clone();
-		Character one("Simple");
-		Character two( one );
-		Character three("Tasty");
-		Character four("empty");
-	
-		four = three;
-		std::cout << "Iceman! " << Kimi.getType() << std::endl;
-		std::cout << "Iceman! " << healthy.getType() << std::endl;
-		std::cout << "one name: " << one.getName() << std::endl;
-		one.equip(clone);
-		one.equip(clone2);
-		one.equip(clone);
-		one.use(0, three);
-		one.use(1, three);
-		Kimi.use(one);
-		healthy.use(three);
-//		delete clone;
-//		delete clone2;
+		print_header("Subject");
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		ICharacter* me = new Character("me");
+		AMateria* tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		ICharacter* bob = new Character("bob");
+		me->use(0, *bob);
+		me->use(1, *bob);
+		delete bob;
+		delete me;
+		delete src;
 	}
 	return (0);
 }

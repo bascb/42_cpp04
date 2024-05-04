@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:30:25 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 15:04:25 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:27:41 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class IMateriaSource
 {
     public:
         virtual ~IMateriaSource() {}
-    //    virtual void learnMateria(AMateria*) = 0;
-    //    virtual AMateria* createMateria(std::string const & type) = 0;
+        virtual void learnMateria(AMateria*) = 0;
+        virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

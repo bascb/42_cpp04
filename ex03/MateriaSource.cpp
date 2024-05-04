@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:44:44 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 15:05:26 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:32:30 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,28 @@ MateriaSource::~MateriaSource( void )
 		}
 	}
 	std::cout << "MateriaSource default Destructor called" << std::endl;
+}
+
+void MateriaSource::learnMateria(AMateria* m)
+{
+	for (int i = 0; i < SLOTS; i++)
+	{
+		if (!inventory[i])
+		{
+			inventory[i] = m;
+			std::cout << "AMateria of type " << m->getType() << " added to MateriaSource inventory, on slot " << i << std::endl;
+			return ;
+		}
+	}
+	std::cout << "MateriaSource inventory is full!" << std::endl;
+}
+
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
+    for (int i = 0; i < SLOTS; i++)
+    {
+        if (inventory[i] && inventory[i]->getType() == type)
+            return (inventory[i]->clone());
+    }
+    return (0);
 }
