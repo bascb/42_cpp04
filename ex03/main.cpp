@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:23:59 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 20:07:45 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/06 22:57:25 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int	main(int argc, char **argv)
 			print_header("Options and usage");
 			std::cout << "Options:" << std::endl;
 			std::cout << std::endl;
+			std::cout << "mat - Test Materia class" << std::endl;
 			std::cout << "char - Test character class" << std::endl;
 			std::cout << "source - Test MateriaSource class" << std::endl;
 			std::cout << std::endl;
@@ -87,6 +88,26 @@ int	main(int argc, char **argv)
 			std::cout << argv[0] << " char" << std::endl;
 			std::cout << std::endl;
 			return (0);
+		}
+		else if (test == "mat")
+		{
+			print_header("Testing Materia class and IMateria class");
+			AMateria* ice = new Ice();
+			AMateria* cure = new Cure();
+			AMateria* clone1;
+			AMateria* clone2;
+
+			std::cout << "ice type: " << ice->getType() << std::endl;
+			std::cout << "cure type: " << cure->getType() << std::endl;
+			clone1 = ice->clone();
+			clone2 = cure->clone();
+			std::cout << "clone1 type: " << clone1->getType() << std::endl;
+			std::cout << "clone2 type: " << clone2->getType() << std::endl;
+
+			delete ice;
+			delete cure;
+			delete clone1;
+			delete clone2;
 		}
 		else if (test == "char")
 		{
