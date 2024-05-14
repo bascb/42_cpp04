@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 22:50:50 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/14 15:42:27 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:46:09 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ int	main(int argc, char **argv)
 			meta->makeSound();
 
 			delete cat;
-			delete reverse;
+			delete meta;
 		}
 	}
 	{
