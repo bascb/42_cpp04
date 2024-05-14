@@ -2,11 +2,15 @@ NAME = animals
 CXX = c++
 CXXFLAGS = -std=c++98 -Wshadow -Wall -Werror -Wextra -g
 SRC = Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp main.cpp
+OBJ = $(SRC:%.cpp=%.o)
 	
 all: $(NAME)
 
-$(NAME):
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+%.o: %.cpp $(INCS)
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 	
 clean:
 	rm -f *.o
@@ -16,4 +20,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all bonus
+.PHONY: clean fclean re all
