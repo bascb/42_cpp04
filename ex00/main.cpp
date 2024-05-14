@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 22:50:50 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 19:06:19 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:42:27 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,19 +123,15 @@ int	main(int argc, char **argv)
 		else if (test == "wrong")
 		{
 			print_header("Testing WrongCat sound");
-			const WrongAnimal* animal = new WrongCat();
-			const WrongCat* cat = new WrongCat();
-			const WrongAnimal* reverse = new WrongAnimal("WrongCat");
+			const WrongAnimal* meta = new WrongAnimal();
+			const WrongAnimal* cat = new WrongCat();
 
-			std::cout << "WrongCat with WrongAnimal type: "<< animal->getType() << std::endl;
-			std::cout << "WrongCat with WrongCat type: "<< cat->getType() << std::endl;
-			std::cout << "WrongAnimal with WrongAnimal type: "<< reverse->getType() << std::endl;
+			std::cout << "cat type: "<< cat->getType() << std::endl;
+			std::cout << "meta type: "<< meta->getType() << std::endl;
 
-			animal->makeSound();
 			cat->makeSound();
-			reverse->makeSound();
+			meta->makeSound();
 
-			delete animal;
 			delete cat;
 			delete reverse;
 		}
