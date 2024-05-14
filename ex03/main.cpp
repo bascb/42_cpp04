@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:23:59 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/06 22:57:25 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:44:03 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,8 @@ int	main(int argc, char **argv)
 		else if (test == "char")
 		{
 			print_header("Testing Character class and ICharacter interface");
-			Ice*	Kimi = new Ice;
-			Cure*	healthy = new Cure;
+			Ice*	Kimi = new Ice();
+			Cure*	healthy = new Cure();
 			Character one("Simple");
 			Character three("Tasty");
 			

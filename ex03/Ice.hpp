@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:42:19 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/25 22:32:22 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:24:55 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Ice : public AMateria
 	public:
 		Ice( void );
 		Ice( const Ice& );
+		Ice& operator=( const Ice& );
 		~Ice( void );
 		AMateria* clone( void ) const;
 		void use(ICharacter& target);

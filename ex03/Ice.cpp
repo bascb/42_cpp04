@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:48:12 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/25 22:40:36 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:30:38 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ Ice::Ice( const Ice& src ) : AMateria(src)
 	std::cout << "Ice copy constructor" << std::endl;
 }
 
+Ice& Ice::operator=( const Ice& src )
+{
+	std::cout << "Ice Copy assignment operator called" << std::endl;
+	if (this != &src)
+	{
+		this->Type = src.Type;
+	}
+	return (*this);
+}
+
 Ice::~Ice( void )
 {
 	std::cout << "Ice Destructor called" << std::endl;
@@ -29,7 +39,7 @@ Ice::~Ice( void )
 
 AMateria* Ice::clone() const
 {
-	AMateria* clone = new Ice(*this);
+	AMateria* clone = new Ice();
 	
 	return (clone);
 }
