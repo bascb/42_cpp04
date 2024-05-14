@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:35:53 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 15:28:08 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:18:50 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 
 class MateriaSource : public IMateriaSource
 {
-    private:
-        AMateria* inventory[SLOTS];
     public:
         MateriaSource( void );
 		MateriaSource( const MateriaSource& );
@@ -30,6 +28,8 @@ class MateriaSource : public IMateriaSource
 		~MateriaSource( void );
         void learnMateria(AMateria*);
         AMateria* createMateria(std::string const & type);
+    private:
+        AMateria* inventory[SLOTS];
 };
 
 #endif

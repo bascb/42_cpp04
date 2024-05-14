@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 23:15:22 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/04/13 10:19:35 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:17:48 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class ICharacter;
 
 class AMateria
 {
-	protected:
-		std::string Type;
 	public:
 		AMateria( std::string const & type );
 		AMateria( const AMateria& );
@@ -31,6 +29,8 @@ class AMateria
 		std::string const & getType( void ) const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
+	protected:
+		std::string Type;
 };
 
 #endif

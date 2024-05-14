@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:33:29 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/17 14:57:32 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:20:36 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 
 class Brain
 {
-	private:
-		std::string ideas[N];
 	public:
 		Brain( void );
 		Brain( const Brain& );
 		Brain& operator=( const Brain& );
 		~Brain( void );
+	private:
+		std::string ideas[N];
 };
 
 #endif

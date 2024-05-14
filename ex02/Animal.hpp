@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:33:01 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/18 22:32:19 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:16:11 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class Animal
 {
-	protected:
-		std::string	type;
 	public:
 		Animal( void );
 		Animal( std::string );
@@ -28,6 +26,8 @@ class Animal
 		virtual ~Animal( void );
 		std::string	getType( void ) const;
 		virtual void	makeSound( void ) const = 0;
+	protected:
+		std::string	type;
 };
 
 #endif

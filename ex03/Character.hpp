@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:45:01 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/05/04 14:41:18 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:18:14 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@
 
 class Character : public ICharacter
 {
-	private:
-		std::string name;
-		AMateria* inventory[SLOTS];
 	public:
 		Character( std::string );
 		Character( const Character& );
@@ -33,6 +30,9 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+	private:
+		std::string name;
+		AMateria* inventory[SLOTS];
 };
 
 #endif

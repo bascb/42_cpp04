@@ -6,7 +6,7 @@
 /*   By: bcastelo <bcastelo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 12:30:00 by bcastelo          #+#    #+#             */
-/*   Updated: 2024/03/17 15:19:23 by bcastelo         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:21:56 by bcastelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 class Cat : public Animal
 {
-	private:
-		Brain* brain;
 	public:
 		Cat( void );
 		Cat( const Cat& );
 		Cat&	operator=( const Cat& );
 		~Cat( void );
 		void	makeSound( void ) const;
+	private:
+		Brain* brain;
 };
 
 #endif
